@@ -1,7 +1,7 @@
 {
-  "name": "domain-validator",
+  "name": "is-domain-valid",
   "version": "1.0.0",
-  "description": "Domain name syntax validator for JS/Node apps",
+  "description": "Dependency free domain name syntax validator",
   "main": "dist/domain-validator.js",
   "files": [
     "dist"
@@ -23,6 +23,7 @@
   "keywords": [
     "domain",
     "validator",
+    "validation",
     "dns",
     "host",
     "hostname",
