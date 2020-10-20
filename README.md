@@ -1,5 +1,5 @@
 # Domain validator
-Domain name syntax validator for JS/Node apps.
+Dependency free domain name syntax validator.
 
 ## Installation
 
@@ -8,7 +8,7 @@ Install the library with `npm --save domain-validator`
 ## Usage
 
 ```javascript
-import isDomainValid from 'domain-validator';
+import isDomainValid from 'is-domain-valid';
 const res = isDomainValid('example.com');
 if (res.result) {
   console.log('Domain is valid');
