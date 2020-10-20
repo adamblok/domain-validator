@@ -1,0 +1,45 @@
+{
+  "name": "domain-validator",
+  "version": "1.0.0",
+  "description": "Domain name syntax validator for JS/Node apps",
+  "main": "dist/domain-validator.js",
+  "files": [
+    "dist"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "build:js": "babel src/domain-validator.js --out-file dist/domain-validator.js --presets @babel/env",
+    "build:jsmin": "babel src/domain-validator.js --out-file dist/domain-validator.min.js --presets @babel/env,minify",
+    "prebuild": "rimraf dist",
+    "build": "npm run build:js && npm run build:jsmin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamblok/domain-validator.git"
+  },
+  "keywords": [
+    "domain",
+    "validator",
+    "dns",
+    "host",
+    "hostname",
+    "tld"
+  ],
+  "author": "Adam Blok https://github.com/adamblok",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adamblok/domain-validator/issues"
+  },
+  "homepage": "https://github.com/adamblok/domain-validator#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "babel-preset-minify": "^0.5.1",
+    "jest": "^26.6.0"
+  },
+  "dependencies": {}
+}
