@@ -1,6 +1,6 @@
 {
   "name": "is-domain-valid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dependency free domain name syntax validator",
   "main": "dist/domain-validator.js",
   "files": [
