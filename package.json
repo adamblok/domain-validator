@@ -2,7 +2,7 @@
   "name": "is-domain-valid",
   "version": "1.0.1",
   "description": "Dependency free domain name syntax validator",
-  "main": "dist/domain-validator.js",
+  "main": "dist/is-domain-valid.js",
   "files": [
     "dist"
   ],
@@ -11,8 +11,8 @@
   },
   "scripts": {
     "test": "jest",
-    "build:js": "babel src/domain-validator.js --out-file dist/domain-validator.js --presets @babel/env",
-    "build:jsmin": "babel src/domain-validator.js --out-file dist/domain-validator.min.js --presets @babel/env,minify",
+    "build:js": "babel src/is-domain-valid.js --out-file dist/is-domain-valid.js --presets @babel/env",
+    "build:jsmin": "babel src/is-domain-valid.js --out-file dist/is-domain-valid.min.js --presets @babel/env,minify",
     "prebuild": "rimraf dist",
     "build": "npm run build:js && npm run build:jsmin"
   },
