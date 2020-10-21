@@ -1,5 +1,5 @@
-import isDomainValid from './../src/is-domain-valid';
-import sampleDomainsList from './sample-domains-list';
+const isDomainValid = require('../is-domain-valid');
+const sampleDomainsList = require('./sample-domains-list');
 
 describe('Domain validator tests', () => {
   it('Max length', () => {
@@ -91,6 +91,11 @@ describe('Domain validator tests', () => {
       .toEqual({
         result: true
       });
+
+    expect(isDomainValid('xn--invalidccccc.com'))
+      .toEqual({
+        result: true
+      });
   })
 
   it('TLD check', () => {
@@ -103,6 +108,61 @@ describe('Domain validator tests', () => {
     expect(isDomainValid('example.academy'))
       .toEqual({
         result: true
+      });
+  });
+
+  it('Subdomain', () => {
+    expect(isDomainValid('sub.domain.com'))
+      .toEqual({
+        result: true
+      });
+
+    expect(isDomainValid('sub.domain.com', {
+      allowSubdomain: false
+    }))
+      .toEqual({
+        result: false,
+        message: 'Subdomain is not allowed without allowSubdomain option'
+      });
+  });
+
+  it('Wildcard', () => {
+    expect(isDomainValid('*.domain.com', {
+      allowWildcard: true
+    }))
+      .toEqual({
+        result: true
+      });
+
+    expect(isDomainValid('*.subdomain.domain.com', {
+      allowWildcard: true
+    }))
+      .toEqual({
+        result: true
+      });
+
+    expect(isDomainValid('*.com', {
+      allowWildcard: true
+    }))
+      .toEqual({
+        result: false,
+        message: 'Label * contains a invalid character(s)'
+      });
+
+    expect(isDomainValid('domain.*.com', {
+      allowWildcard: true
+    }))
+      .toEqual({
+        result: false,
+        message: 'Label * contains a invalid character(s)'
+      });
+
+    expect(isDomainValid('domain.*', {
+      allowWildcard: true
+    }))
+      .toEqual({
+        result: false,
+        message: 'Label * contains a invalid character(s)'
       });
   });
 

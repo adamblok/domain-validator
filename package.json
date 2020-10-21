@@ -2,19 +2,12 @@
   "name": "is-domain-valid",
   "version": "1.1.0",
   "description": "Dependency free domain name syntax validator",
-  "main": "dist/is-domain-valid.js",
-  "files": [
-    "dist"
-  ],
+  "main": "is-domain-valid.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "jest",
-    "build:js": "babel src/is-domain-valid.js --out-file dist/is-domain-valid.js --presets @babel/env",
-    "build:jsmin": "babel src/is-domain-valid.js --out-file dist/is-domain-valid.min.js --presets @babel/env,minify",
-    "prebuild": "rimraf dist",
-    "build": "npm run build:js && npm run build:jsmin"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,8 +19,7 @@
     "validation",
     "dns",
     "host",
-    "hostname",
-    "tld"
+    "hostname"
   ],
   "author": "Adam Blok https://github.com/adamblok",
   "license": "MIT",
@@ -36,10 +28,6 @@
   },
   "homepage": "https://github.com/adamblok/domain-validator#readme",
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "babel-preset-minify": "^0.5.1",
     "jest": "^26.6.0"
   },
   "dependencies": {}

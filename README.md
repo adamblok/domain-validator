@@ -5,9 +5,10 @@ Dependency free domain name syntax validator with TLD checking and IDN support. 
 
 ```javascript
 example.com
-sub.example.com
+sub.example.com // allowSubdomain options is requried
 exa-mple.com
 xn--c1yn36f.com // allowIdn option is required
+*.wildcard.com // allowWildcard and allowSubdomain options are required
 ```
 
 ### Invalid examples
@@ -22,7 +23,8 @@ example-.com
 exa--mple.com
 example.doesnotexist // checkTld option is required
 xn--c1yn--bb.com
-*.wildcard.com // wildcards will be supported soon
+*.com
+example.*.com
 ```
 
 ## Installation
@@ -32,7 +34,7 @@ Install the library with `npm --save is-domain-valid`
 ## Usage
 
 ```javascript
-import isDomainValid from 'is-domain-valid';
+const isDomainValid = require('../is-domain-valid');
 const res = isDomainValid('example.com');
 if (res.result) {
   console.log('Domain is valid');
@@ -48,7 +50,9 @@ Options can be passed as a second argument in `isDomainValid` function:
 ```javascript
 const defaultOptions = {
   checkTld: true,
-  allowIdn: true
+  allowIdn: true,
+  allowSubdomain: true,
+  allowWildcard: false
 };
 const res = isDomainValid('example.com', defaultOptions);
 ```

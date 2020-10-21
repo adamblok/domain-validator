@@ -1,7 +1,7 @@
 /**
  * Source: https://moz.com/top500
  */
-export default [
+module.exports = [
   'apple.com',
   'www.google.com',
   'youtube.com',
