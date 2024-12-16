@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/adamblok/domain-validator#readme",
   "devDependencies": {
-    "jest": "^26.6.0"
+    "jest": "^29.7.0"
   },
   "dependencies": {}
 }
