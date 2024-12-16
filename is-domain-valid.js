@@ -8,7 +8,7 @@ const isDomainValid = (domain, options) => {
     };
   }
 
-  domain = domain.toLowerCase().trim();
+  domain = domain.toLowerCase();
 
   const defaultOptions = {
     checkTld: true,
